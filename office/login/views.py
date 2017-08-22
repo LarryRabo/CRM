@@ -1,10 +1,14 @@
-from django.shortcuts import render
-from django.http import httpReponse
+from django.contrib.auth import authenticate,login,logout
 
-def login(request):
-    if request.usr.is_authenticated():
-        return HttpRespose('login in at port 9000')
-    else:
-        return HttpResponse('not login at port 9000')
+@csrf_exempt
+def user_login(request):
+    redirect_to = request.REQUEST.get('next', '')
+    if request.method == 'POST':
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
+        user = authenticate(username=username, password=password)
+        if user and user.is_active:
+            login(request, user)
+            return HttpResponseRedirect(request.POST.get('next', '/') or '/')
 
-
+    return render_to_response("xxxx/login.html", locals(), RequestContext(request))

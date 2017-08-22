@@ -48,16 +48,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_cas.middle.CASMiddleware',
-    'django.middleware.doc.XViewMiddleware',
+    #'django_cas.middle.CASMiddleware',
+    #'django.middleware.doc.XViewMiddleware',
 
 ]
 AUTHENTICATION_BACKENDS = (
   'django.contrib.auth.backends.ModelBackend',
-  'django_cas.backends.CASBackend',
+  #'django_cas.backends.CASBackend',
 )
 
-CAS_SERVER_URL = 'http://cas.oxxs.letv.cn:6789/cas/login'
+#CAS_SERVER_URL = 'http://cas.oxxs.letv.cn:6789/cas/login'
 
 ROOT_URLCONF = 'office.urls'
 

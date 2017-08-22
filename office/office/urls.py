@@ -18,7 +18,8 @@ from django.contrib import admin
 
 
 urlpatterns = [
-  (r'^accounts/login/$', 'django_cas.views.login'),
-  (r'^accounts/logout/$', 'django_cas.views.logout'),
+  url(r'^accounts/login/$', 'django_cas.views.login'),
+  url(r'^accounts/logout/$', 'django_cas.views.logout'),
   url(r'^admin/', include(admin.site.urls)),
+  url(r'^accounts/login/$', user_login, name='login'),
 ]
