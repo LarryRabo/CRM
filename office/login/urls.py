@@ -11,4 +11,3 @@ urlpatterns=[
 ]
 
 
-#http://www.cnblogs.com/fnng/p/3750596.html
